@@ -11,16 +11,21 @@ SELECT * FROM animals WHERE name NOT LIKE 'Gabumon';
 SELECT * FROM animals WHERE weight_kg >=10.4 AND weight_kg <= 17.3;
 
 /*Part two AND TRANSACTIONS*/
-UPDATE animals SET species = 'unspecified';
-
 BEGIN TRANSACTION;
 UPDATE animals SET species = 'unspecified';
+
+SELECT species from animals;
+
 ROLLBACK;
+
+SELECT species from animals;
 
 BEGIN TRANSACTION;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
 COMMIT;
+
+SELECT species from animals;
 
 BEGIN TRANSACTION;
 DELETE FROM animals;
@@ -38,7 +43,7 @@ ROLLBACK TO SP2;
 UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 COMMIT;
 
-/*Part two AND TRANSACTIONS*/
+/*Part two AND QUERIES*/
 SELECT COUNT(*) FROM animals;
 SELECT * FROM animals WHERE escape_attempts = 0;
 SELECT AVG(weight_kg) FROM animals;
