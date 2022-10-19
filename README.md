@@ -1,4 +1,4 @@
-# Vet clinic database: create animals table
+# Vet clinic database: query multiple tables
 
 ## Getting Started
 
