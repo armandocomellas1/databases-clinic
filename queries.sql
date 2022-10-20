@@ -59,3 +59,19 @@ SELECT COUNT(animals.species_id) FROM animals GROUP BY animals.species_id;
 SELECT owner_id, name FROM animals WHERE animals.owner_id = 2 AND animals.species_id = 2;
 SELECT owner_id, name FROM animals WHERE animals.owner_id = 5 AND animals.escape_attempts = 0;
 SELECT owner_id, COUNT(owner_id) FROM animals GROUP BY owner_id ORDER BY COUNT DESC;
+
+/*Part 4th AND QUERIES*/
+SELECT * FROM public.visits WHERE vets_id = 1 ORDER BY date_of_visit DESC;
+SELECT * FROM public.visits WHERE vets_id = 3 ORDER BY date_of_visit DESC;
+SELECT * FROM vets LEFT JOIN specializations ON (vets.id = specializations.vets_id);
+SELECT * FROM visits WHERE vets_id = 3 AND date_of_visit BETWEEN '2020-04-01' AND '2020-08-30';
+SELECT visits.animals_id, COUNT(visits.animals_id) FROM visits GROUP BY visits.animals_id ORDER BY count DESC;
+SELECT * FROM public.visits WHERE vets_id = 2 ORDER BY date_of_visit ASC;
+SELECT visits.animals_id, visits.vets_id, visits.date_of_visit FROM public.visits ORDER BY date_of_visit DESC LIMIT 1;
+
+SELECT visits.vets_id, COUNT(visits.vets_id)
+FROM visits WHERE visits.vets_id NOT IN (1, 3, 4) GROUP BY visits.vets_id ORDER BY count DESC;
+
+SELECT COUNT(animals.species_id) AS CNT, species.name
+FROM visits, animals, species WHERE visits.vets_id = 2 AND visits.animals_id = animals.id AND animals.species_id = species.id
+GROUP BY species.name ORDER BY CNT DESC LIMIT 1;
