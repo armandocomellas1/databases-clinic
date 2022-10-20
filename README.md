@@ -1,4 +1,8 @@
-# Vet clinic database: query multiple tables
+# Vet clinic database: add "join table" for visits
+
+## This is the final pull request:
+
+- where you will be ablle to find all data, inputs and queries in their directories inside the github repo.
 
 ## Getting Started
 
