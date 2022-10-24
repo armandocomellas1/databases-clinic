@@ -67,3 +67,4 @@ create table vet_2 as select animals_id, date_of_visit from  visits where vets_i
 create table vet_2 as select animals_id, date_of_visit from visits where vets_id = 2;
 CREATE INDEX ownersemail ON owners(email ASC);
 
+CREATE INDEX email_index ON owners(email ASC);
