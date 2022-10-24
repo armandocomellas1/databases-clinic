@@ -66,3 +66,4 @@ create table visits_count as select animals_id, animals_count from ( select anim
 
 create table vet_2 as select animals_id, date_of_visit from visits where vets_id = 2;
 
+CREATE INDEX email_index ON owners(email ASC);
