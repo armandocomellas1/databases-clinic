@@ -75,3 +75,6 @@ FROM visits WHERE visits.vets_id NOT IN (1, 3, 4) GROUP BY visits.vets_id ORDER 
 SELECT COUNT(animals.species_id) AS CNT, species.name
 FROM visits, animals, species WHERE visits.vets_id = 2 AND visits.animals_id = animals.id AND animals.species_id = species.id
 GROUP BY species.name ORDER BY CNT DESC LIMIT 1;
+
+/*Part 5th AND QUERIES*/
+SELECT animals_count FROM visits_count WHERE animals_id = 4;
