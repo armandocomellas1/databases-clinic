@@ -63,4 +63,5 @@ CREATE TABLE visits(
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
 create table visits_count as select animals_id, animals_count from ( select animals_id, count(*) as animals_count from visits group by animals_id) AS newtable_animals;
+create table vet_2 as select animals_id, date_of_visit from  visits where vets_id = 2;
 
