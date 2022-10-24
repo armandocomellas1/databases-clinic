@@ -78,3 +78,4 @@ GROUP BY species.name ORDER BY CNT DESC LIMIT 1;
 
 /*Part 5th AND QUERIES*/
 SELECT animals_count FROM visits_count WHERE animals_id = 4;
+SELECT * FROM owners where email = 'owner_18327@mail.com';
